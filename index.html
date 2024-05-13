@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello world</title>
+    </head>
+    <body>
+        <div>
+            Hello world
+        </div>
+        <script>
+            function getComputerInput() {
+                const comIn = Math.floor(Math.random() * 3) + 1
+
+                return comIn
+            }
+
+            function getUserInput() {
+                let uIn = prompt("Please choose:\n1. Rock\n2. Paper\n3. Scissors")
+                while(uIn != 1 && uIn != 2 && uIn != 3) {
+                    alert("Input not valid!")
+                    uIn = prompt("Please choose:\n1. Rock\n2. Paper\n3. Scissors")
+                }
+
+                return uIn
+            }
+
+            function showResult(num) {
+                if(num === 1) {
+                    return "Rock"
+                }
+                else if(num === 2) {
+                    return "Paper"
+                }
+                else if(num === 3) {
+                    return "Scissors"
+                }
+            }
+            let uIn = Number(getUserInput())
+
+            function playGame() {
+                let comIn = getComputerInput()
+
+                if(comIn === uIn) {
+                    alert("It's even!\nYou choose: " + showResult(uIn) + " and Computer choose: " + showResult(comIn))
+                }
+                else if(uIn === comIn + 1 || (uIn + 2) === comIn) {
+                    alert("You're the winner!\n You choose: " + showResult(uIn) + " and Computer choose: " + showResult(comIn))
+                }
+                else {
+                    alert("You're lose!\nYou choose: " + showResult(uIn) + " and Computer choose: " + showResult(comIn))
+                }
+                playGame()
+            }
+            
+            playGame()
+            
+        </script>
+    </body>
+</html>
