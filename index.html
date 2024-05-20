@@ -3,58 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <title>Hello world</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js" defer></script>
     </head>
     <body>
-        <div>
-            Hello world
+        <div class="rps_ui">
+            <div class="header">
+                <button class="startround">Start round</button>
+            </div>
+            <div class="option">
+                <button class="rock">Rock</button>
+                <button class="paper">Paper</button>
+                <button class="scissors">Scissors</button>
+            </div>
+            <div class="result">
+                <div class="sub">
+                    <div id="thrownum">Throw 0</div>
+                    <div id="userchoose">You choose:</div>
+                    <div id="comchoose">Computer choose:</div>
+                    <div id="result">Result:</div>
+                </div>
+                <div class="final">
+                    <div id="userscore">Your score: 0</div>
+                    <div id="comscore">Computer score: 0</div>
+                    <div id="roundresult">Round resutl: </div>
+                </div>
+            </div>
         </div>
-        <script>
-            function getComputerInput() {
-                const comIn = Math.floor(Math.random() * 3) + 1
-
-                return comIn
-            }
-
-            function getUserInput() {
-                let uIn = prompt("Please choose:\n1. Rock\n2. Paper\n3. Scissors")
-                while(uIn != 1 && uIn != 2 && uIn != 3) {
-                    alert("Input not valid!")
-                    uIn = prompt("Please choose:\n1. Rock\n2. Paper\n3. Scissors")
-                }
-
-                return uIn
-            }
-
-            function showResult(num) {
-                if(num === 1) {
-                    return "Rock"
-                }
-                else if(num === 2) {
-                    return "Paper"
-                }
-                else if(num === 3) {
-                    return "Scissors"
-                }
-            }
-            let uIn = Number(getUserInput())
-
-            function playGame() {
-                let comIn = getComputerInput()
-
-                if(comIn === uIn) {
-                    alert("It's even!\nYou choose: " + showResult(uIn) + " and Computer choose: " + showResult(comIn))
-                }
-                else if(uIn === comIn + 1 || (uIn + 2) === comIn) {
-                    alert("You're the winner!\n You choose: " + showResult(uIn) + " and Computer choose: " + showResult(comIn))
-                }
-                else {
-                    alert("You're lose!\nYou choose: " + showResult(uIn) + " and Computer choose: " + showResult(comIn))
-                }
-                playGame()
-            }
-            
-            playGame()
-            
-        </script>
     </body>
 </html>

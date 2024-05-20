@@ -1,0 +1,57 @@
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.rps_ui {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin: auto;
+    background-color: #fff7f9;
+    flex: 1;
+}
+
+.header {
+    margin: 25px;
+}
+
+.option {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px 25px;
+}
+
+.option button {
+    height: 100px;
+    width: 200px;
+    background-color: #ff6b87;
+    border-radius: 7px;
+    border: #E06BFF solid 4px;
+    color: white;
+    font-size: 16px;
+}
+
+.option button:hover {
+    background-color: #ffdbe2;
+}
+
+.sub, .final {
+    margin: 25px;
+}
+
+#roundresutl {
+    color: red;
+}
+
+#result {
+    color: palevioletred;
+}
+
+#roundresult {
+    color: red;
+}
